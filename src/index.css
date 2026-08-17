@@ -23,6 +23,14 @@
   font-family: 'Cinzel', Georgia, serif;
 }
 
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
 .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
