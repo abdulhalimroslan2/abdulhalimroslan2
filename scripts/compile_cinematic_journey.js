@@ -38,21 +38,21 @@ const inputFiles = rawFiles.map(f => {
 
 console.log(`🎬 Found all 10 source clips in: ${inputDir}`);
 
-// Pure optical, buttery smooth, non-pixelated transitions (zero blockiness)
+// Pure optical, velvety smooth, 100% non-pixelated transitions (zero blockiness / zero pixelize)
 const transitions = [
-  'zoomin',      // 1 -> 2: Cikgu Halim -> Stylus Tip Macro Zoom (gentle camera push)
-  'dissolve',    // 2 -> 3: Stylus Tip -> Sub-pixel Photonic Matrix (silky optical dissolve)
-  'smoothleft',  // 3 -> 4: Sub-pixel -> Ribbon Cable (smooth fluid horizontal glide)
-  'dissolve',    // 4 -> 5: Ribbon Cable -> Silicon Substrate (seamless current illumination)
-  'dissolve',    // 5 -> 6: Silicon Substrate -> Binary Processor (velvety computational dissolve)
-  'radial',      // 6 -> 7: Binary Processor -> Wi-Fi RF Waves (soft circular wavefront)
-  'zoomin',      // 7 -> 8: Wi-Fi Waves -> Projector Receiver (smooth forward optic dive)
-  'smoothup',    // 8 -> 9: Projector Receiver -> Prism Lens (fluid vertical light ascension)
-  'dissolve'     // 9 -> 10: Prism Light -> Student Retina (pure optical light merger)
+  'dissolve',    // 1 -> 2: Cikgu Halim -> Stylus Tip (Pure optical cross-dissolve)
+  'dissolve',    // 2 -> 3: Stylus Tip -> Sub-pixel Matrix (Pure optical dissolve, zero pixelation)
+  'smoothleft',  // 3 -> 4: Sub-pixel -> Ribbon Cable (Fluid smooth horizontal motion glide)
+  'dissolve',    // 4 -> 5: Ribbon Cable -> Silicon Substrate (Velvety illumination)
+  'dissolve',    // 5 -> 6: Silicon Substrate -> Binary Processor (Continuous computational blend)
+  'radial',      // 6 -> 7: Binary Processor -> Wi-Fi RF Waves (Soft radial light wave)
+  'dissolve',    // 7 -> 8: Wi-Fi Waves -> Projector Receiver (Optical forward dive)
+  'smoothup',    // 8 -> 9: Projector Receiver -> Prism Lens (Fluid vertical light ascent)
+  'dissolve'     // 9 -> 10: Prism Light -> Student Retina (Soft photonic merge)
 ];
 
 const SEGMENT_DURATION = 3.0; // Duration per clip (seconds)
-const TRANSITION_DURATION = 0.9; // Velvety optical morph cross-fade duration (seconds)
+const TRANSITION_DURATION = 1.0; // Silky smooth 1.0s optical cross-fade duration (seconds)
 
 /**
  * Compile video stream with given dimensions and target mobile mode
@@ -78,7 +78,7 @@ function compileVideo({ width, height, fps, crf, outputFile, isMobilePortrait = 
       }
     }
 
-    // Step 2: Chain xfade morph filters with pure optical transitions
+    // Step 2: Chain xfade morph filters with pure optical dissolves
     let lastStream = 'v0';
     let currentOffset = SEGMENT_DURATION - TRANSITION_DURATION;
 
@@ -171,7 +171,7 @@ async function run() {
       width: 1920,
       height: 1080,
       fps: 60,
-      crf: 19.5,
+      crf: 22.0,
       outputFile: desktopOutput,
       isMobilePortrait: false
     });
@@ -182,7 +182,7 @@ async function run() {
       width: 720,
       height: 1280,
       fps: 60,
-      crf: 21,
+      crf: 23.0,
       outputFile: mobileOutput,
       isMobilePortrait: true
     });
