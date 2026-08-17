@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { VideoScrubberCanvas } from './components/VideoScrubberCanvas';
 import { LuxuryHudTelemetry } from './components/LuxuryHudTelemetry';
-import { AutoTourPlayer } from './components/AutoTourPlayer';
 import { ChapterStoryOverlay } from './components/ChapterStoryOverlay';
 import { BlueprintPromptRoute } from './components/BlueprintPromptRoute';
 import { CHAPTERS } from './constants/candidateData';
@@ -212,30 +211,8 @@ export const App: React.FC = () => {
         fps={fps}
       />
 
-      {/* 5-Chapter Story & Educational Content Overlay */}
+      {/* 10-Chapter Story & Educational Content Overlay */}
       <ChapterStoryOverlay progress={progress} />
-
-      {/* Dual Mode Auto Tour Player Bar */}
-      <AutoTourPlayer
-        isPlaying={isPlaying}
-        onTogglePlay={() => setIsPlaying(!isPlaying)}
-        speed={speed}
-        onChangeSpeed={setSpeed}
-        progress={progress}
-        onSeek={handleSeek}
-        chapters={CHAPTERS}
-        currentChapterId={currentChapter.id}
-        onJumpChapter={handleJumpChapter}
-        isAutoMode={isAutoMode}
-        onToggleMode={() => {
-          setIsAutoMode(!isAutoMode);
-          if (!isAutoMode) {
-            setIsPlaying(true);
-          } else {
-            setIsPlaying(false);
-          }
-        }}
-      />
 
       {/* Reconstruction Blueprint Modal Route (/prompt) */}
       {showBlueprint && (
