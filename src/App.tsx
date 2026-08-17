@@ -51,7 +51,7 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Keyboard shortcut listener (Spacebar for Play/Pause, M for Mute, B for Blueprint)
+  // Keyboard shortcut listener (Arrow Keys for Chapter Jump, Spacebar for Play/Pause, M for Mute)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
@@ -63,14 +63,26 @@ export const App: React.FC = () => {
       } else if (e.key === 'm' || e.key === 'M') {
         const muted = audioSynth.toggleMute();
         setIsMuted(muted);
-      } else if (e.key === 'b' || e.key === 'B') {
-        setShowBlueprint((prev) => !prev);
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextChapterId = Math.min(10, currentChapter.id + 1);
+        if (nextChapterId !== currentChapter.id) {
+          handleJumpChapter(nextChapterId);
+          audioSynth.playChapterWarp(nextChapterId);
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevChapterId = Math.max(1, currentChapter.id - 1);
+        if (prevChapterId !== currentChapter.id) {
+          handleJumpChapter(prevChapterId);
+          audioSynth.playChapterWarp(prevChapterId);
+        }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [currentChapter.id]);
 
   // Update audio synth drone depth as scroll progress changes
   useEffect(() => {
@@ -178,11 +190,17 @@ export const App: React.FC = () => {
     }
   };
 
-  // Jump to specific chapter
+  // Jump to specific chapter with optimal framing
   const handleJumpChapter = (chapterId: number) => {
     const targetCh = CHAPTERS.find((ch) => ch.id === chapterId);
     if (!targetCh) return;
-    handleSeek(targetCh.timeRange[0]);
+    if (chapterId === 1) {
+      handleSeek(0.0);
+    } else if (chapterId === 10) {
+      handleSeek(1.0);
+    } else {
+      handleSeek((targetCh.timeRange[0] + targetCh.timeRange[1]) / 2);
+    }
   };
 
   // Toggle Mute
