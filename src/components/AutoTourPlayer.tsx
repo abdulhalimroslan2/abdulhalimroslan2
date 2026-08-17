@@ -153,7 +153,7 @@ export const AutoTourPlayer: React.FC<AutoTourPlayerProps> = ({
           </div>
 
           {/* Right: Quick Chapter Jump Buttons */}
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-0.5 sm:space-x-1 overflow-x-auto">
             {chapters.map((ch) => {
               const isCurrent = currentChapterId === ch.id;
               return (
@@ -164,7 +164,7 @@ export const AutoTourPlayer: React.FC<AutoTourPlayerProps> = ({
                     audioSynth.playChapterWarp(ch.id);
                   }}
                   title={`Bab ${ch.chapterNumber}: ${ch.title}`}
-                  className={`w-6 h-6 rounded-md font-mono text-[10px] flex items-center justify-center transition-all cursor-pointer ${
+                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md font-mono text-[8px] sm:text-[10px] flex items-center justify-center transition-all cursor-pointer shrink-0 ${
                     isCurrent
                       ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_10px_#00f0ff]'
                       : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-slate-200 border border-white/5'
