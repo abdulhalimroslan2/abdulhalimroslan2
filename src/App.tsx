@@ -136,8 +136,8 @@ export const App: React.FC = () => {
       lastTime = now;
 
       setProgress((prev) => {
-        // Full duration is ~20.8s, increment by (deltaSec * speed / totalDuration)
-        const next = prev + (deltaSec * speed) / 20.8;
+        // Full duration is ~21.9s, increment by (deltaSec * speed / totalDuration)
+        const next = prev + (deltaSec * speed) / 21.9;
         if (next >= 1) {
           setIsPlaying(false);
           return 1;

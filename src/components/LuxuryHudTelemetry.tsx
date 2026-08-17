@@ -21,7 +21,7 @@ export const LuxuryHudTelemetry: React.FC<LuxuryHudTelemetryProps> = ({
   fps
 }) => {
   // Format simulated microsecond timecode
-  const totalSeconds = progress * 20.8;
+  const totalSeconds = progress * 21.9;
   const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
   const secs = String(Math.floor(totalSeconds % 60)).padStart(2, '0');
   const frames = String(Math.floor((totalSeconds % 1) * 60)).padStart(2, '0');
