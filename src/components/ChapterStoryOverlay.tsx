@@ -44,10 +44,13 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
     } else if (progress >= peakStart && progress <= peakEnd) {
       opacity = 1;
       translateY = 0;
-    } else if (progress > peakEnd && progress <= end) {
+    } else if (progress > peakEnd && end > peakEnd && progress < end) {
       const t = (progress - peakEnd) / Math.max(0.001, end - peakEnd);
       opacity = 1 - t;
       translateY = -18 * t;
+    } else if (progress >= peakEnd && peakEnd >= 0.98) {
+      opacity = 1;
+      translateY = 0;
     }
 
     return {
@@ -404,10 +407,10 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </section>
 
       {/* ========================================================================= */}
-      {/* BAB 10: THE FUTURE & CLIMAX SEAL (0.90 - 1.00)                            */}
+      {/* BAB 10: THE FUTURE & CLIMAX SEAL (0.90 - 1.00 - FINAL PERMANENT FRAME)    */}
       {/* ========================================================================= */}
       <section 
-        style={getChapterStyle(0.89, 0.92, 0.99, 1.00)}
+        style={getChapterStyle(0.88, 0.91, 1.00, 1.00)}
         className="fixed inset-0 flex flex-col items-center justify-center px-4 sm:px-8 text-center"
       >
         <div className="max-w-3xl bg-[#030308]/75 backdrop-blur-2xl p-6 sm:p-10 rounded-3xl border border-amber-500/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
