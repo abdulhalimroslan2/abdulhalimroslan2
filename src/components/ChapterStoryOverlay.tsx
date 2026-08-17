@@ -12,7 +12,8 @@ import {
   Layers,
   Binary,
   Compass,
-  GraduationCap
+  GraduationCap,
+  BookOpen
 } from 'lucide-react';
 import { 
   CANDIDATE_PROFILE, 
@@ -93,40 +94,35 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </div>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 01: THE EDUCATOR (0.00 - 0.10) [FULL NAME MONUMENTAL HERO]         */}
+      {/* BAB 01: THE EDUCATOR (0.00 - 0.10)                                        */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.00, 0.00, 0.07, 0.11)}
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-2xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-cyan-500/30 shadow-[0_0_40px_rgba(0,240,255,0.1)]">
-          {/* Category Micro-Pill */}
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span>01 // THE EDUCATOR • TOKOH PENDIDIK</span>
+            <span>01 // THE EDUCATOR</span>
           </div>
 
-          {/* Monumental Hero Headline with Full Candidate Name */}
           <h1 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-2.5">
-            {CANDIDATE_PROFILE.name.toUpperCase()}
+            ABDUL HALIM BIN ROSLAN
           </h1>
 
-          {/* Role & School Badge */}
           <div className="flex flex-wrap items-center gap-2 mb-3.5">
             <span className="px-2.5 py-0.5 rounded-md bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-mono font-bold">
-              {CANDIDATE_PROFILE.grade}
+              16 Tahun Pendidikan
             </span>
             <span className="text-xs text-slate-300 font-mono">
-              {CANDIDATE_PROFILE.school}
+              SMK Agama Kerian • DG10
             </span>
           </div>
 
-          {/* Concise Narrative Tagline */}
           <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-6">
-            Pendidik berwawasan dengan 16 tahun dedikasi. Satu gerakan kecil daripada seorang guru merintis perjalanan merentas semikonduktor, hingga menjadi pengetahuan yang sampai kepada minda pelajar.
+            Guru, pendidik STEM & pencipta kandungan digital. 16 tahun dalam pendidikan.
           </p>
 
-          {/* Minimalist Profile Strip */}
           <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 transition-colors">
             <div className="flex items-center space-x-3.5">
               <div 
@@ -139,7 +135,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
                 <img src="/media/halim_portrait.png" alt={CANDIDATE_PROFILE.name} className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="font-playfair text-sm font-bold text-white">Biodata & Falsafah Inovasi</h3>
+                <h3 className="font-playfair text-sm font-bold text-white">Profil Pendidik & Inovasi</h3>
                 <p className="text-[11px] font-mono text-cyan-300">16 Tahun Dedikasi Perkhidmatan</p>
               </div>
             </div>
@@ -159,7 +155,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 02: THE INITIATION (0.10 - 0.20) [STYLUS TIP TO DIGITIZER]         */}
+      {/* BAB 02: THE VISION (0.10 - 0.20)                                          */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.09, 0.12, 0.17, 0.21)}
@@ -168,158 +164,49 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-sky-500/30 shadow-2xl">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-500/30 text-sky-300 text-xs font-mono mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-            <span>02 // THE INITIATION</span>
+            <span>02 // THE VISION</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Sentuhan Pertama. <br />
+            Dari Guru <br />
             <span className="font-cormorant italic font-normal text-sky-300">
-              Nadi Input Digital.
+              kepada Inovator.
             </span>
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Hujung stylus bersentuhan dengan digitizer kaca. Satu garisan idea bertukar menjadi koordinat voltan mikro dengan resolusi sub-milimeter.
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Mengubah idea pendidikan menjadi penyelesaian digital.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.03] border border-sky-500/20 flex items-center space-x-3">
             <Zap className="w-4 h-4 text-sky-400 shrink-0" />
-            <span className="text-xs font-mono text-slate-300">Input Frekuensi Tinggi: 240 Hz Sampling Rate</span>
+            <span className="text-xs font-mono text-slate-300">Transformasi Idea Kepada Aplikasi Nyata</span>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 03: QUANTUM LATTICE (0.20 - 0.30) [SUB-PIXEL MICRO MATRIX]         */}
+      {/* BAB 03: THE CREATOR (0.20 - 0.30)                                         */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.19, 0.22, 0.27, 0.31)}
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
-        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-cyan-500/30 shadow-2xl">
+        <div className="max-w-2xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-cyan-500/30 shadow-2xl">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span>03 // QUANTUM LATTICE</span>
+            <span>03 // THE CREATOR</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Matriks Sub-Piksel. <br />
+            Membina <br />
             <span className="font-cormorant italic font-normal text-cyan-300">
-              Denyutan Isyarat Mikro.
+              Ekosistem Digital.
             </span>
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Kamera menyelam ke skala mikroskopik $10^{'{ -3 }'}$ m $\rightarrow$ $10^{'{ -5 }'}$ m. Setiap sentuhan mengaktifkan kekisi kapasitif di celah matriks piksel RGB.
-          </p>
-
-          <div className="grid grid-cols-2 gap-2 text-center font-mono text-xs">
-            <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-slate-200">
-              <div className="font-bold text-cyan-300">10⁻⁶ m</div>
-              <div className="text-[10px] text-slate-400">Skala Matriks</div>
-            </div>
-            <div className="p-2.5 rounded-lg bg-white/[0.03] border border-white/10 text-slate-200">
-              <div className="font-bold text-cyan-300">0.01 ms</div>
-              <div className="text-[10px] text-slate-400">Tindak Balas Isyarat</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* CHAPTER 04: DATA HIGHWAY (0.30 - 0.40) [RIBBON CABLE & 16-YR RECORD]       */}
-      {/* ========================================================================= */}
-      <section 
-        style={getChapterStyle(0.29, 0.32, 0.37, 0.41)}
-        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
-      >
-        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-rose-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
-            <span>04 // DATA HIGHWAY</span>
-          </div>
-
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Lebuhraya Data. <br />
-            <span className="font-cormorant italic font-normal text-rose-300">
-              16 Tahun Khidmat.
-            </span>
-          </h2>
-
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Isyarat elektrik mengalir pantas merentasi kabel reben fleksibel — melambangkan dedikasi 16 tahun perkhidmatan cemerlang tanpa henti.
-          </p>
-
-          <div className="grid grid-cols-3 gap-2 text-center font-mono">
-            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
-              <div className="text-base font-bold text-white">16 Thn</div>
-              <div className="text-[9px] text-slate-400">Khidmat</div>
-            </div>
-            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-rose-500/30">
-              <div className="text-base font-bold text-rose-300">96.79%</div>
-              <div className="text-[9px] text-slate-400">SKPMg2</div>
-            </div>
-            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
-              <div className="text-base font-bold text-white">APC 2021</div>
-              <div className="text-[9px] text-slate-400">Cemerlang</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* CHAPTER 05: SILICON SUBSTRATE (0.40 - 0.50) [CHIP WAFER & POWER RAILS]     */}
-      {/* ========================================================================= */}
-      <section 
-        style={getChapterStyle(0.39, 0.42, 0.47, 0.51)}
-        className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
-      >
-        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-pink-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pink-950/60 border border-pink-500/30 text-pink-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-            <span>05 // SILICON SUBSTRATE</span>
-          </div>
-
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Substrat Silikon. <br />
-            <span className="font-cormorant italic font-normal text-pink-300">
-              Seni Bina Semikonduktor.
-            </span>
-          </h2>
-
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Kamera menembusi ke lapisan nanometer $10^{'{ -6 }'}$ m $\rightarrow$ $10^{'{ -8 }'}$ m. Arus elektrik menyalakan litar bersepadu untuk pemprosesan berprestasi tinggi.
-          </p>
-
-          <div className="p-3 rounded-xl bg-white/[0.03] border border-pink-500/20 flex items-center space-x-3">
-            <Cpu className="w-4 h-4 text-pink-400 shrink-0" />
-            <span className="text-xs font-mono text-slate-300">Struktur Nano: Transistor FinFET & Rel Kuasa Pintar</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* CHAPTER 06: COMPUTATIONAL CORE (0.50 - 0.60) [6 APPS ECOSYSTEM]           */}
-      {/* ========================================================================= */}
-      <section 
-        style={getChapterStyle(0.49, 0.52, 0.57, 0.61)}
-        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
-      >
-        <div className="max-w-2xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-purple-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-            <span>06 // COMPUTATIONAL CORE</span>
-          </div>
-
-          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Enjin Inovasi. <br />
-            <span className="font-cormorant italic font-normal text-purple-300">
-              Ekosistem 6 Aplikasi Digital.
-            </span>
-          </h2>
-
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Logik perduaan 0 & 1 diproses menjadi penyelesaian digital menyeluruh: Pengurusan RPH Pintar, CIDS Suites Pro, Sahsiah Murid & Modul STEM Interaktif.
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            MyPhysicsTutor, PhysFlix, PhysPlot, HeadcountPro, CIDS Suites Pro & CikguScan.
           </p>
 
           <div className="space-y-3">
@@ -331,10 +218,10 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
                     audioSynth.playClick(1000);
                     setSelectedApp(app);
                   }}
-                  className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 cursor-pointer transition-all"
+                  className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-cyan-500/40 cursor-pointer transition-all"
                 >
                   <div className="text-xs font-mono font-bold text-white truncate">{app.name}</div>
-                  <div className="text-[10px] text-purple-300/80 font-mono truncate">{app.category}</div>
+                  <div className="text-[10px] text-cyan-300/80 font-mono truncate">{app.category}</div>
                 </div>
               ))}
             </div>
@@ -344,9 +231,9 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
                 audioSynth.playClick(1000);
                 setSelectedApp(APP_ECOSYSTEM[0]);
               }}
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all cursor-pointer"
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-slate-950 font-bold text-xs font-mono uppercase tracking-wider flex items-center justify-center space-x-2 shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all cursor-pointer"
             >
-              <span>Terokai 6 Aplikasi Digital</span>
+              <span>Terokai Ekosistem Digital</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
@@ -354,65 +241,106 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 07: WAVE PROPAGATION (0.60 - 0.70) [WI-FI RF PULSE]               */}
+      {/* BAB 04: THE IMPACT (0.30 - 0.40)                                          */}
       {/* ========================================================================= */}
       <section 
-        style={getChapterStyle(0.59, 0.62, 0.67, 0.71)}
-        className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
+        style={getChapterStyle(0.29, 0.32, 0.37, 0.41)}
+        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
       >
-        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-indigo-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            <span>07 // WAVE PROPAGATION</span>
+        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-rose-500/30 shadow-2xl">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs font-mono mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
+            <span>04 // THE IMPACT</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Pancaran Gelombang. <br />
-            <span className="font-cormorant italic font-normal text-indigo-300">
-              Penyebaran Tanpa Wayar.
+            Teknologi yang <br />
+            <span className="font-cormorant italic font-normal text-rose-300">
+              Memudahkan.
             </span>
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Data digital ditukarkan kepada gelombang elektromagnetik 5 GHz, berlayar merentasi ruang udara bilik darjah dengan kelajuan cahaya.
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Memperkasa pembelajaran murid, PdP guru dan analisis akademik.
           </p>
 
-          <div className="p-3 rounded-xl bg-white/[0.03] border border-indigo-500/20 flex items-center space-x-3">
-            <Radio className="w-4 h-4 text-indigo-400 shrink-0" />
-            <span className="text-xs font-mono text-slate-300">Protokol Wi-Fi 6: OFDMA & Pancaran RF 5.8 GHz</span>
+          <div className="grid grid-cols-3 gap-2 text-center font-mono">
+            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <div className="text-xs font-bold text-white">Murid</div>
+              <div className="text-[9px] text-slate-400">Pembelajaran</div>
+            </div>
+            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-rose-500/30">
+              <div className="text-xs font-bold text-rose-300">Guru</div>
+              <div className="text-[9px] text-slate-400">PdP Pintar</div>
+            </div>
+            <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <div className="text-xs font-bold text-white">Akademik</div>
+              <div className="text-[9px] text-slate-400">Analisis Data</div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 08: THE RECEPTOR (0.70 - 0.80) [PROJECTOR RECEIVER & HONORS]      */}
+      {/* BAB 05: THE CONTRIBUTOR (0.40 - 0.50)                                     */}
       {/* ========================================================================= */}
       <section 
-        style={getChapterStyle(0.69, 0.72, 0.77, 0.81)}
-        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
+        style={getChapterStyle(0.39, 0.42, 0.47, 0.51)}
+        className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
-        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-blue-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            <span>08 // THE RECEPTOR</span>
+        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-pink-500/30 shadow-2xl">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pink-950/60 border border-pink-500/30 text-pink-300 text-xs font-mono mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+            <span>05 // THE CONTRIBUTOR</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Papan Penerima. <br />
-            <span className="font-cormorant italic font-normal text-blue-300">
-              Pengiktirafan & Kepakaran.
+            Berkongsi, Membimbing, <br />
+            <span className="font-cormorant italic font-normal text-pink-300">
+              Membina.
             </span>
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Isyarat diserap oleh litar penerima unjuran — mencerminkan pengiktirafan Pingat Emas Kebangsaan serta khidmat Panel Penilai Inovasi STEM.
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Panel pakar, pembangunan modul, penceramah & perkongsian inovasi pendidikan.
+          </p>
+
+          <div className="p-3 rounded-xl bg-white/[0.03] border border-pink-500/20 flex items-center space-x-3">
+            <ShieldCheck className="w-4 h-4 text-pink-400 shrink-0" />
+            <span className="text-xs font-mono text-slate-300">Panel Pakar & Pembimbing Inovasi Pendidikan</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* BAB 06: THE RECOGNITION (0.50 - 0.60)                                     */}
+      {/* ========================================================================= */}
+      <section 
+        style={getChapterStyle(0.49, 0.52, 0.57, 0.61)}
+        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
+      >
+        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-purple-500/30 shadow-2xl">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+            <span>06 // THE RECOGNITION</span>
+          </div>
+
+          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
+            Inovasi yang <br />
+            <span className="font-cormorant italic font-normal text-purple-300">
+              Diiktiraf.
+            </span>
+          </h2>
+
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Emas IIEF 2025, Emas I3EC’25, Perak INNOZILLA & Johan Inovasi Kerian.
           </p>
 
           <div className="space-y-2 mb-4">
-            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-blue-500/20">
+            <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-purple-500/20">
               <div className="flex items-center space-x-2">
                 <Award className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span className="text-xs font-outfit text-slate-200">Pingat Emas e-NIIEX 2021 & AI STEM</span>
+                <span className="text-xs font-outfit text-slate-200">Emas IIEF 2025 & Emas I3EC’25</span>
               </div>
               <span className="text-[10px] font-mono text-amber-300 font-bold">EMAS</span>
             </div>
@@ -423,7 +351,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
               audioSynth.playClick(1100);
               setShowAwardsModal(true);
             }}
-            className="w-full py-2.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold uppercase flex items-center justify-center space-x-1.5 transition-all cursor-pointer"
+            className="w-full py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold uppercase flex items-center justify-center space-x-1.5 transition-all cursor-pointer"
           >
             <span>Senarai Lengkap Pengiktirafan</span>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -432,7 +360,69 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 09: OPTICAL PRISM (0.80 - 0.90) [PRISM REFRACTION & PROJECTION]    */}
+      {/* BAB 07: THE KNOWLEDGE (0.60 - 0.70)                                       */}
+      {/* ========================================================================= */}
+      <section 
+        style={getChapterStyle(0.59, 0.62, 0.67, 0.71)}
+        className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
+      >
+        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-indigo-500/30 shadow-2xl">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+            <span>07 // THE KNOWLEDGE</span>
+          </div>
+
+          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
+            Menulis untuk <br />
+            <span className="font-cormorant italic font-normal text-indigo-300">
+              Generasi.
+            </span>
+          </h2>
+
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Modul Fizik, CheatNote, bahan digital & penerbitan pendidikan.
+          </p>
+
+          <div className="p-3 rounded-xl bg-white/[0.03] border border-indigo-500/20 flex items-center space-x-3">
+            <BookOpen className="w-4 h-4 text-indigo-400 shrink-0" />
+            <span className="text-xs font-mono text-slate-300">Penerbitan Modul Fizik SPM & Bahan Digital</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* BAB 08: THE LEGACY (0.70 - 0.80)                                          */}
+      {/* ========================================================================= */}
+      <section 
+        style={getChapterStyle(0.69, 0.72, 0.77, 0.81)}
+        className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
+      >
+        <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-blue-500/30 shadow-2xl">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+            <span>08 // THE LEGACY</span>
+          </div>
+
+          <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
+            Lebih daripada <br />
+            <span className="font-cormorant italic font-normal text-blue-300">
+              Teknologi.
+            </span>
+          </h2>
+
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Membina budaya inovasi dan pendigitalan pendidikan.
+          </p>
+
+          <div className="p-3 rounded-xl bg-white/[0.03] border border-blue-500/20 flex items-center space-x-3">
+            <Compass className="w-4 h-4 text-blue-400 shrink-0" />
+            <span className="text-xs font-mono text-slate-300">Membudayakan Pemikiran Digital Berterusan</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* BAB 09: THE JOURNEY (0.80 - 0.90)                                         */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.79, 0.82, 0.87, 0.91)}
@@ -441,29 +431,29 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-emerald-500/30 shadow-2xl">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono mb-3.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>09 // OPTICAL PRISM</span>
+            <span>09 // THE JOURNEY</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
-            Pembiasan Prisma. <br />
+            16 Tahun. <br />
             <span className="font-cormorant italic font-normal text-emerald-300">
-              Pancaran Fotonik Cahaya.
+              Satu Visi.
             </span>
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed mb-5">
-            Enjin optik memecahkan alur cahaya kristal tulen kepada spektrum warna, memancarkan kandungan pengajaran ke layar paparan kelas.
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed mb-5">
+            Daripada pengalaman kepada inovasi yang memberi impak.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.03] border border-emerald-500/20 flex items-center space-x-3">
             <Layers className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span className="text-xs font-mono text-slate-300">Enjin Optik 3-LCD: Pemisahan Spektrum RGB & Unjuran 4K</span>
+            <span className="text-xs font-mono text-slate-300">Dedikasi 16 Tahun Menerusi Saluran Pendidikan Digital</span>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* CHAPTER 10: APEX RETINA & LEGACY (0.90 - 1.00) [STUDENT EYE & CLIMAX SEAL] */}
+      {/* BAB 10: THE FUTURE (0.90 - 1.00)                                          */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.89, 0.92, 0.99, 1.00)}
@@ -472,18 +462,19 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         <div className="max-w-2xl bg-[#030308]/50 backdrop-blur-2xl p-7 sm:p-11 rounded-3xl border border-amber-500/30 shadow-[0_0_50px_rgba(212,175,55,0.15)]">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 text-amber-300 text-xs font-mono mb-3.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" />
-            <span>10 // APEX RETINA & LEGACY</span>
+            <span>10 // THE FUTURE</span>
           </div>
 
           <h2 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-2.5">
-            Menerangi Minda. <br />
-            <span className="font-cormorant italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400">
-              Melakar Masa Depan.
-            </span>
+            ABDUL HALIM BIN ROSLAN
           </h2>
 
-          <p className="text-slate-300 font-outfit text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-6">
-            Kitaran lengkap: Sentuhan ikhlas seorang guru, diperkasa oleh keupayaan teknologi, menerangi potensi tanpa batas generasi pewaris negara.
+          <p className="font-cormorant italic text-lg sm:text-xl text-amber-300 mb-3">
+            Pendidik. Inovator. Pencipta Kandungan Digital.
+          </p>
+
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-6">
+            Membina masa depan pendidikan, satu inovasi pada satu masa.
           </p>
 
           {/* Tactile Biometric Action Seal */}
@@ -550,7 +541,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       {/* Full Awards & Panel List Modal */}
       {showAwardsModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl pointer-events-auto animate-fade-in">
-          <div className="relative max-w-xl w-full max-h-[85vh] overflow-y-auto bg-[#070913] border border-blue-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="relative max-w-xl w-full max-h-[85vh] overflow-y-auto bg-[#070913] border border-purple-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
             <button 
               onClick={() => setShowAwardsModal(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-white p-2 text-xs font-mono cursor-pointer"
@@ -559,7 +550,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
             </button>
 
             <h3 className="font-playfair text-2xl font-bold text-white mb-2">Pengiktirafan & Kepakaran</h3>
-            <p className="text-xs font-mono text-blue-300 mb-6">Pencapaian Inovasi, Panel STEM & Penerbitan Pendidikan</p>
+            <p className="text-xs font-mono text-purple-300 mb-6">Pencapaian Inovasi, Panel STEM & Penerbitan Pendidikan</p>
 
             <div className="space-y-4">
               <div>
@@ -593,7 +584,7 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
             <div className="mt-6 pt-4 border-t border-white/10 flex justify-end">
               <button
                 onClick={() => setShowAwardsModal(false)}
-                className="px-5 py-2 rounded-xl bg-blue-500 text-slate-950 font-mono font-bold text-xs hover:bg-blue-400 transition-colors cursor-pointer"
+                className="px-5 py-2 rounded-xl bg-purple-500 text-slate-950 font-mono font-bold text-xs hover:bg-purple-400 transition-colors cursor-pointer"
               >
                 TUTUP
               </button>
