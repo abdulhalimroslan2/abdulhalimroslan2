@@ -19,12 +19,9 @@ export const App: React.FC = () => {
   const [fps, setFps] = useState(60);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const targetProgressRef = useRef(0);
-  const currentProgressRef = useRef(0);
   const lastScrollY = useRef(0);
   const lastScrollTime = useRef(Date.now());
   const autoPlayRafId = useRef<number | null>(null);
-  const smoothDampRafId = useRef<number | null>(null);
   const lastChapterIdRef = useRef<number>(1);
   const fpsFrameCount = useRef(0);
   const fpsLastTime = useRef(performance.now());
@@ -81,7 +78,7 @@ export const App: React.FC = () => {
     audioSynth.updateDroneDepth(progress);
   }, [progress]);
 
-  // FPS Counter calculation
+  // FPS Counter simulation / calculation
   useEffect(() => {
     let animId: number;
     const calcFps = () => {
@@ -98,36 +95,16 @@ export const App: React.FC = () => {
     return () => cancelAnimationFrame(animId);
   }, []);
 
-  // Continuous buttery smooth progress damping loop
-  useEffect(() => {
-    const dampLoop = () => {
-      const diff = targetProgressRef.current - currentProgressRef.current;
-      if (Math.abs(diff) > 0.0002) {
-        currentProgressRef.current += diff * 0.16;
-        setProgress(currentProgressRef.current);
-      } else if (currentProgressRef.current !== targetProgressRef.current) {
-        currentProgressRef.current = targetProgressRef.current;
-        setProgress(targetProgressRef.current);
-      }
-      smoothDampRafId.current = requestAnimationFrame(dampLoop);
-    };
-
-    smoothDampRafId.current = requestAnimationFrame(dampLoop);
-    return () => {
-      if (smoothDampRafId.current) cancelAnimationFrame(smoothDampRafId.current);
-    };
-  }, []);
-
   // Handle Manual Window Scroll with velocity tracking
   const handleScroll = useCallback(() => {
-    if (isAutoMode && isPlaying) return;
+    if (isAutoMode && isPlaying) return; // Do not interrupt auto tour unless manual scroll mode
 
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (scrollHeight <= 0) return;
 
     const currentY = window.scrollY;
-    const rawProg = Math.max(0, Math.min(1, currentY / scrollHeight));
-    targetProgressRef.current = rawProg;
+    const currentProg = Math.max(0, Math.min(1, currentY / scrollHeight));
+    setProgress(currentProg);
 
     // Calculate scroll velocity
     const now = Date.now();
@@ -158,23 +135,25 @@ export const App: React.FC = () => {
       const deltaSec = (now - lastTime) / 1000;
       lastTime = now;
 
-      const next = targetProgressRef.current + (deltaSec * speed) / 20.8;
-      if (next >= 1) {
-        targetProgressRef.current = 1;
-        setIsPlaying(false);
-        return;
-      }
+      setProgress((prev) => {
+        // Full duration is ~20.8s, increment by (deltaSec * speed / totalDuration)
+        const next = prev + (deltaSec * speed) / 20.8;
+        if (next >= 1) {
+          setIsPlaying(false);
+          return 1;
+        }
 
-      targetProgressRef.current = next;
+        // Sync window scroll position smoothly
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollHeight > 0) {
+          window.scrollTo({
+            top: next * scrollHeight,
+            behavior: 'instant' as ScrollBehavior
+          });
+        }
 
-      // Sync window scroll position smoothly
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollHeight > 0) {
-        window.scrollTo({
-          top: next * scrollHeight,
-          behavior: 'instant' as ScrollBehavior
-        });
-      }
+        return next;
+      });
 
       autoPlayRafId.current = requestAnimationFrame(tourLoop);
     };
@@ -189,7 +168,7 @@ export const App: React.FC = () => {
   // Seek handler from scrubber or chapter jumps
   const handleSeek = (newProg: number) => {
     const clamped = Math.max(0, Math.min(1, newProg));
-    targetProgressRef.current = clamped;
+    setProgress(clamped);
 
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (scrollHeight > 0) {
@@ -216,24 +195,12 @@ export const App: React.FC = () => {
   return (
     <div ref={containerRef} className="relative min-h-[500vh] bg-[#030308] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
       
-      {/* 60 FPS Keyframe-4 Hardware Scrubbed Video Canvas with Sub-frame Lerp */}
+      {/* 60 FPS Keyframe-4 Hardware Scrubbed Video Canvas */}
       <VideoScrubberCanvas
         progress={progress}
         velocity={velocity}
         isMobile={isMobilePortrait}
       />
-
-      {/* Ambient Drifting Photonic Glow Stream */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-10 opacity-30">
-        <div 
-          className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-cyan-500/10 blur-[100px] transition-transform duration-1000"
-          style={{ transform: `translate3d(${progress * 60}px, ${progress * 120}px, 0)` }}
-        />
-        <div 
-          className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-purple-500/10 blur-[120px] transition-transform duration-1000"
-          style={{ transform: `translate3d(-${progress * 80}px, -${progress * 60}px, 0)` }}
-        />
-      </div>
 
       {/* Top and Floating HUD Telemetry Overlay */}
       <LuxuryHudTelemetry
@@ -245,7 +212,7 @@ export const App: React.FC = () => {
         fps={fps}
       />
 
-      {/* 5-Chapter Story & Educational Content Overlay (Minimal & Spacious) */}
+      {/* 5-Chapter Story & Educational Content Overlay */}
       <ChapterStoryOverlay progress={progress} />
 
       {/* Dual Mode Auto Tour Player Bar */}
