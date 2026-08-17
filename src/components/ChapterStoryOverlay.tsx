@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  Sparkles, 
   Award, 
   ArrowUpRight, 
   ShieldCheck, 
@@ -10,9 +9,7 @@ import {
   Radio,
   Eye,
   Layers,
-  Binary,
   Compass,
-  GraduationCap,
   BookOpen
 } from 'lucide-react';
 import { 
@@ -24,7 +21,6 @@ import {
 } from '../constants/candidateData';
 import { AppEcosystemItem } from '../types/cinematic';
 import { HolographicAppModal } from './HolographicAppModal';
-import { TactileClimaxAction } from './TactileClimaxAction';
 import { audioSynth } from '../services/audioSynth';
 
 interface ChapterStoryOverlayProps {
@@ -101,11 +97,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-2xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-cyan-500/30 shadow-[0_0_40px_rgba(0,240,255,0.1)]">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span>01 // THE EDUCATOR</span>
-          </div>
-
           <h1 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-2.5">
             ABDUL HALIM BIN ROSLAN
           </h1>
@@ -162,11 +153,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-sky-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-500/30 text-sky-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-            <span>02 // THE VISION</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Dari Guru <br />
             <span className="font-cormorant italic font-normal text-sky-300">
@@ -193,11 +179,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-2xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-cyan-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span>03 // THE CREATOR</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Membina <br />
             <span className="font-cormorant italic font-normal text-cyan-300">
@@ -248,11 +229,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-rose-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
-            <span>04 // THE IMPACT</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Teknologi yang <br />
             <span className="font-cormorant italic font-normal text-rose-300">
@@ -289,11 +265,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-pink-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pink-950/60 border border-pink-500/30 text-pink-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-            <span>05 // THE CONTRIBUTOR</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Berkongsi, Membimbing, <br />
             <span className="font-cormorant italic font-normal text-pink-300">
@@ -320,11 +291,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-purple-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-            <span>06 // THE RECOGNITION</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Inovasi yang <br />
             <span className="font-cormorant italic font-normal text-purple-300">
@@ -367,11 +333,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-indigo-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            <span>07 // THE KNOWLEDGE</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Menulis untuk <br />
             <span className="font-cormorant italic font-normal text-indigo-300">
@@ -398,11 +359,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-end px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-blue-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            <span>08 // THE LEGACY</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             Lebih daripada <br />
             <span className="font-cormorant italic font-normal text-blue-300">
@@ -429,11 +385,6 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
         className="fixed inset-0 flex items-center justify-start px-6 sm:px-12 lg:px-20"
       >
         <div className="max-w-xl bg-[#030308]/45 backdrop-blur-xl p-6 sm:p-9 rounded-3xl border border-emerald-500/30 shadow-2xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono mb-3.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>09 // THE JOURNEY</span>
-          </div>
-
           <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] mb-2.5">
             16 Tahun. <br />
             <span className="font-cormorant italic font-normal text-emerald-300">
@@ -453,34 +404,50 @@ export const ChapterStoryOverlay: React.FC<ChapterStoryOverlayProps> = ({ progre
       </section>
 
       {/* ========================================================================= */}
-      {/* BAB 10: THE FUTURE (0.90 - 1.00)                                          */}
+      {/* BAB 10: THE FUTURE & CLIMAX SEAL (0.90 - 1.00)                            */}
       {/* ========================================================================= */}
       <section 
         style={getChapterStyle(0.89, 0.92, 0.99, 1.00)}
-        className="fixed inset-0 flex flex-col items-center justify-center px-6 sm:px-12 text-center"
+        className="fixed inset-0 flex flex-col items-center justify-center px-4 sm:px-8 text-center"
       >
-        <div className="max-w-2xl bg-[#030308]/50 backdrop-blur-2xl p-7 sm:p-11 rounded-3xl border border-amber-500/30 shadow-[0_0_50px_rgba(212,175,55,0.15)]">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 text-amber-300 text-xs font-mono mb-3.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" />
-            <span>10 // THE FUTURE</span>
+        <div className="max-w-3xl bg-[#030308]/75 backdrop-blur-2xl p-6 sm:p-10 rounded-3xl border border-amber-500/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
+          
+          {/* Jata Kementerian Pendidikan Malaysia Logo */}
+          <div className="flex justify-center mb-5">
+            <div className="p-2.5 rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+              <img 
+                src="/media/kpm_logo.png" 
+                alt="Kementerian Pendidikan Malaysia" 
+                className="h-14 sm:h-20 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
+              />
+            </div>
           </div>
 
-          <h2 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-2.5">
+          {/* Official Award Nomination Header */}
+          <div className="space-y-1 mb-5">
+            <div className="text-xs sm:text-sm font-mono tracking-widest text-amber-300 font-bold uppercase">
+              PENCALONAN ANUGERAH KHAS PENDIDIKAN: PENCIPTA KANDUNGAN DIGITAL
+            </div>
+            <div className="text-[11px] sm:text-xs font-mono text-slate-300 tracking-wider uppercase">
+              BERSEMPENA MAJLIS APRESIASI GURU NEGERI PERAK TAHUN 2026
+            </div>
+          </div>
+
+          {/* Candidate Name */}
+          <h2 className="font-playfair text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-2.5">
             ABDUL HALIM BIN ROSLAN
           </h2>
 
-          <p className="font-cormorant italic text-lg sm:text-xl text-amber-300 mb-3">
+          {/* Subtitle / Role */}
+          <p className="font-cormorant italic text-lg sm:text-2xl text-amber-200 mb-3">
             Pendidik. Inovator. Pencipta Kandungan Digital.
           </p>
 
-          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-6">
+          {/* Tagline */}
+          <p className="text-slate-200 font-outfit text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
             Membina masa depan pendidikan, satu inovasi pada satu masa.
           </p>
 
-          {/* Tactile Biometric Action Seal */}
-          <div>
-            <TactileClimaxAction />
-          </div>
         </div>
       </section>
 
