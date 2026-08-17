@@ -54,60 +54,21 @@ export const LuxuryHudTelemetry: React.FC<LuxuryHudTelemetryProps> = ({
           </div>
         </div>
 
-        {/* Center: Live Spatial Telemetry Readout (Desktop only) */}
-        <div className="hidden lg:flex items-center space-x-6 px-4 py-1.5 rounded-full bg-[#070913]/70 border border-white/10 text-xs font-mono">
-          <div className="flex items-center space-x-1.5 text-slate-400">
-            <Compass className="w-3.5 h-3.5 text-cyan-400" />
-            <span>GEO:</span>
-            <span className="text-slate-200">{currentChapter.coordinates}</span>
-          </div>
-          <div className="w-px h-3 bg-white/10" />
-          <div className="flex items-center space-x-1.5 text-slate-400">
-            <Cpu className="w-3.5 h-3.5 text-purple-400" />
-            <span>SCALE:</span>
-            <span className="text-purple-300 font-bold">{currentChapter.depthScale}</span>
-          </div>
-          <div className="w-px h-3 bg-white/10" />
-          <div className="flex items-center space-x-1.5 text-slate-400">
-            <span className="text-slate-500">FPS:</span>
-            <span className="text-emerald-400 font-bold">{fps || 60}</span>
-          </div>
-        </div>
-
-        {/* Right: Timecode, Audio Mute Toggle & Blueprint Link */}
-        <div className="flex items-center space-x-2 md:space-x-4">
-          {/* Real-time Timecode */}
-          <div className="flex items-center space-x-1 px-2.5 py-1 rounded bg-[#070913]/60 border border-white/10 font-mono text-[11px] md:text-xs">
-            <span className="text-cyan-400 font-bold">{mins}:{secs}:{frames}</span>
-            <span className="text-slate-600 text-[9px]">.{micros}</span>
-          </div>
-
-          {/* Audio Synthesizer Mute Toggle */}
+        {/* Right: Audio Mute / Sound Toggle Button ONLY */}
+        <div className="flex items-center">
           <button
             onClick={() => {
               onToggleMute();
               audioSynth.playClick(1500);
             }}
-            title={isMuted ? "Aktifkan Audio HUD" : "Bisukan Audio HUD"}
-            className={`p-2 rounded-lg border transition-all duration-200 cursor-pointer ${
+            title={isMuted ? "Aktifkan Audio" : "Bisukan Audio"}
+            className={`p-2.5 rounded-xl border transition-all duration-200 cursor-pointer ${
               isMuted
                 ? 'bg-slate-900/60 border-slate-700/50 text-slate-500 hover:text-slate-300'
-                : 'bg-cyan-950/40 border-cyan-500/40 text-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.2)]'
+                : 'bg-cyan-950/40 border-cyan-500/40 text-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.25)]'
             }`}
           >
             {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 animate-pulse" />}
-          </button>
-
-          {/* Blueprint Route Trigger */}
-          <button
-            onClick={() => {
-              audioSynth.playClick(1800);
-              onOpenBlueprint();
-            }}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-300 transition-all font-mono text-xs cursor-pointer"
-          >
-            <Terminal className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">PROMPT BLUEPRINT</span>
           </button>
         </div>
       </header>
