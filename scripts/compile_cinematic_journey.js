@@ -38,17 +38,17 @@ const inputFiles = rawFiles.map(f => {
 
 console.log(`🎬 Found all 10 source clips in: ${inputDir}`);
 
-// Pure optical, velvety smooth, 100% non-pixelated transitions (zero blockiness / zero pixelize)
+// Pure optical, 100% non-sandy, non-pixelated cross-fades (Zero dither, Zero noise, Pure buttery smooth linear alpha blend)
 const transitions = [
-  'dissolve',    // 1 -> 2: Cikgu Halim -> Stylus Tip (Pure optical cross-dissolve)
-  'dissolve',    // 2 -> 3: Stylus Tip -> Sub-pixel Matrix (Pure optical dissolve, zero pixelation)
-  'smoothleft',  // 3 -> 4: Sub-pixel -> Ribbon Cable (Fluid smooth horizontal motion glide)
-  'dissolve',    // 4 -> 5: Ribbon Cable -> Silicon Substrate (Velvety illumination)
-  'dissolve',    // 5 -> 6: Silicon Substrate -> Binary Processor (Continuous computational blend)
-  'radial',      // 6 -> 7: Binary Processor -> Wi-Fi RF Waves (Soft radial light wave)
-  'dissolve',    // 7 -> 8: Wi-Fi Waves -> Projector Receiver (Optical forward dive)
-  'smoothup',    // 8 -> 9: Projector Receiver -> Prism Lens (Fluid vertical light ascent)
-  'dissolve'     // 9 -> 10: Prism Light -> Student Retina (Soft photonic merge)
+  'fade', // 1 -> 2: Cikgu Halim -> Stylus Tip (Pure optical cross-fade)
+  'fade', // 2 -> 3: Stylus Tip -> Sub-pixel Matrix (Pure optical cross-fade)
+  'fade', // 3 -> 4: Sub-pixel -> Ribbon Cable (Pure optical cross-fade)
+  'fade', // 4 -> 5: Ribbon Cable -> Silicon Substrate (Pure optical cross-fade)
+  'fade', // 5 -> 6: Silicon Substrate -> Binary Processor (Pure optical cross-fade)
+  'fade', // 6 -> 7: Binary Processor -> Wi-Fi RF Waves (Pure optical cross-fade)
+  'fade', // 7 -> 8: Wi-Fi Waves -> Projector Receiver (Pure optical cross-fade)
+  'fade', // 8 -> 9: Projector Receiver -> Prism Lens (Pure optical cross-fade)
+  'fade'  // 9 -> 10: Prism Light -> Student Retina (Pure optical cross-fade)
 ];
 
 const SEGMENT_DURATION = 3.0; // Duration per clip (seconds)
